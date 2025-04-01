@@ -21,7 +21,7 @@ db.connect(err => {
     }
 });
 
-// Create Task
+
 app.post("/tasks", (req, res) => {
     const { title, description, status, due_date } = req.body;
     
@@ -39,7 +39,7 @@ app.post("/tasks", (req, res) => {
     });
 });
 
-// Get All Tasks
+
 app.get("/tasks", (req, res) => {
     db.query("SELECT * FROM tasks", (err, result) => {
         if (err) {
@@ -50,7 +50,7 @@ app.get("/tasks", (req, res) => {
     });
 });
 
-// Update Task
+
 app.put("/tasks/:id", (req, res) => {
     const { title, description, status, due_date } = req.body;
     const { id } = req.params;
@@ -69,7 +69,7 @@ app.put("/tasks/:id", (req, res) => {
     });
 });
 
-// Delete Task
+
 app.delete("/tasks/:id", (req, res) => {
     const { id } = req.params;
 
